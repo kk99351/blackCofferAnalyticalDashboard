@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Sales</title>
+    <link rel="icon" href="img/logo.png" type="image/png" />
+
+    <link rel="stylesheet" href="css/bootstrap1.min.css" />
+
+    <link rel="stylesheet" href="vendors/themefy_icon/themify-icons.css" />
+
+    <link rel="stylesheet" href="vendors/niceselect/css/nice-select.css" />
+
+    <link rel="stylesheet" href="vendors/owl_carousel/css/owl.carousel.css" />
+
+    <link rel="stylesheet" href="vendors/gijgo/gijgo.min.css" />
+
+    <link rel="stylesheet" href="vendors/font_awesome/css/all.min.css" />
+    <link rel="stylesheet" href="vendors/tagsinput/tagsinput.css" />
+
+    <link rel="stylesheet" href="vendors/datepicker/date-picker.css" />
+    <link rel="stylesheet" href="vendors/vectormap-home/vectormap-2.0.2.css" />
+
+    <link rel="stylesheet" href="vendors/scroll/scrollable.css" />
+
+    <link
+      rel="stylesheet"
+      href="vendors/datatable/css/jquery.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="vendors/datatable/css/responsive.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="vendors/datatable/css/buttons.dataTables.min.css"
+    />
+
+    <link rel="stylesheet" href="vendors/text_editor/summernote-bs4.css" />
+
+    <link rel="stylesheet" href="vendors/morris/morris.css" />
+
+    <link rel="stylesheet" href="vendors/material_icon/material-icons.css" />
+
+    <link rel="stylesheet" href="css/metisMenu.css" />
+
+    <link rel="stylesheet" href="css/style1.css" />
+    <link rel="stylesheet" href="css/colors/default.css" id="colorSkinCSS" />
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body class="crm_body_bg">
+    <section class="main_content dashboard_part large_header_bg">
+      <div class="main_content_iner default_main_contaner_iner">
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="page_title_box d-flex align-items-center justify-content-between"
+              >
+                <div class="page_title_left">
+                  <h3 class="f_s_30 f_w_700 text_color_6">Dashboard</h3>
+                  <ol class="breadcrumb page_bradcam default_bradcam mb-0">
+                    <li class="breadcrumb-item">
+                      <a href="javascript:void(0);">Statistical Data </a>
+                    </li>
+                  </ol>
+                </div>
+                <nav class="navbar navbar-dark" style="background-color: #567aed !important;border-radius: 5px;">
+                  <div class="pos-f-t">
+                    <div class="collapse" id="navbarToggleExternalContent">
+                      <nav class="navbar navbar-expand-lg">
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                          <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="yearSelected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Year
+                              </a>
+                              <div class="dropdown-menu" id="yearList" aria-labelledby="yearSelected">
+                              </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="topicSelected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Topics
+                              </a>
+                              <div class="dropdown-menu" id="topicList" aria-labelledby="topicSelected">
+                              </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="sectorSelected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Sector
+                              </a>
+                              <div class="dropdown-menu" id="sectorList" aria-labelledby="sectorSelected">
+                              </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="regionSelected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Region
+                              </a>
+                              <div class="dropdown-menu" id="regionList" aria-labelledby="regionSelected">
+                              </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="pestleSelected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                PEST
+                              </a>
+                              <div class="dropdown-menu" id="pestleList" aria-labelledby="pestleSelected">
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
+                    </div>
+                  </div>
+                  <button class="navbar-toggler btn_1" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-angle-left"></i> Filters
+                  </button>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 card_height_100">
+              <div class="white_card mb_20 default_border_1px">
+                <div class="white_card_header">
+                  <div class="box_header m-0">
+                    <div class="main-title">
+                      <h3 class="m-0">Events Per Ten Year</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="white_card_body" style="height: 286px">
+                  <canvas id="bar"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="white_card card_height_100 default_border_1px mb_20">
+                <div class="white_card_header">
+                  <div class="box_header m-0">
+                    <div class="main-title">
+                      <h3 class="m-0">Average Value Overalall</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="white_card_body QA_section">
+                  <div class="radar-chart">
+                    <div id="marketchart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="chartHere" class="white_card mb_20 default_border_1px">
+              <div
+                class="white_card_body renew_report_card d-flex align-items-center justify-content-between flex-wrap"
+              >
+                <div class="renew_report_left">
+                  <h4 class="f_s_19 f_w_600 color_theme2 mb-0">
+                    Hot Topics and Three Quality Over a periodical range
+                  </h4>
+                  <p class="color_gray2 f_s_12 f_w_600">
+                    Topics,Intensity,Relevance and Likelihood per four year
+                  </p>
+                </div>
+                <div class="create_report_btn">
+                  <a href="#chartHere" class="btn_1 mt-1 mb-1">Scroll Here</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="white_box mb_30">
+                  <div id="apex_3"></div>
+                </div>
+            </div>
+            <div class="col-lg-8 white_card mb_20 default_border_1px">
+              <div
+                class="row white_card_body renew_report_card d-flex align-items-center justify-content-between flex-wrap"
+              >
+                <div class="col-lg-6 renew_report_left">
+                  <h4 class="f_w_900 f_s_60 mb-0 me-2">Top Seven</h4>
+                  <p class="color_gray2 f_s_12 f_w_600">
+                    Top 7 Hot topics ranked, according to thier count weighted sum.
+                  </p>
+                </div>
+                <div
+                  class="col-lg-4 white_card_body d-flex align-items-center"
+                  style="height: 140px"
+                >
+                  <div class="w-100" style="height: 80px">
+                    <canvas width="100%" id="page_views"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="renew_report_left">
+                <h4 class="f_s_19 f_w_600 color_theme2 mb-0" style="margin-left: 3rem;">
+                  Hover over lines to see individual topic rating.
+                </h4>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="white_card card_height_100 default_border_1px mb_20">
+                <div class="white_card_header">
+                  <div class="box_header m-0">
+                    <div class="main-title">
+                      <h3 class="m-0">Region Pie Chart</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="white_card_body pb-0">
+                  <div id="region_chart" class="dashboard_w_map"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="white_card card_height_100 mb_20 default_border_1px">
+                <div class="date_picker_wrapper shadow_none">
+                  <div class="default-datepicker">
+                    <div id="country_chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="back-top" style="display: none">
+      <a title="Go to Top" href="#">
+        <i class="ti-angle-up"></i>
+      </a>
+    </div>
+    <script src="js/jquery1-3.4.1.min.js"></script>
+
+    <script src="js/popper1.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/metisMenu.js"></script>
+
+    <script src="vendors/count_up/jquery.waypoints.min.js"></script>
+
+    <script src="vendors/chartlist/Chart.min.js"></script>
+
+    <script src="vendors/count_up/jquery.counterup.min.js"></script>
+
+    <script src="vendors/niceselect/js/jquery.nice-select.min.js"></script>
+
+    <script src="vendors/owl_carousel/js/owl.carousel.min.js"></script>
+
+    <script src="vendors/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/datatable/js/dataTables.responsive.min.js"></script>
+    <script src="vendors/datatable/js/dataTables.buttons.min.js"></script>
+    <script src="vendors/datatable/js/buttons.flash.min.js"></script>
+    <script src="vendors/datatable/js/jszip.min.js"></script>
+    <script src="vendors/datatable/js/pdfmake.min.js"></script>
+    <script src="vendors/datatable/js/vfs_fonts.js"></script>
+    <script src="vendors/datatable/js/buttons.html5.min.js"></script>
+    <script src="vendors/datatable/js/buttons.print.min.js"></script>
+
+    <script src="vendors/datepicker/datepicker.js"></script>
+    <script src="vendors/datepicker/datepicker.en.js"></script>
+    <script src="vendors/datepicker/datepicker.custom.js"></script>
+    <script src="js/chart.min.js"></script>
+    <script src="vendors/chartjs/roundedBar.min.js"></script>
+
+    <script src="vendors/progressbar/jquery.barfiller.js"></script>
+
+    <script src="vendors/tagsinput/tagsinput.js"></script>
+
+    <script src="vendors/text_editor/summernote-bs4.js"></script>
+    <script src="vendors/am_chart/amcharts.js"></script>
+
+    <script src="vendors/scroll/perfect-scrollbar.min.js"></script>
+    <script src="vendors/scroll/scrollable-custom.js"></script>
+
+    <script src="vendors/vectormap-home/vectormap-2.0.2.min.js"></script>
+    <script src="vendors/vectormap-home/vectormap-world-mill-en.js"></script>
+
+    <script src="vendors/apex_chart/apex-chart2.js"></script>
+    <script src="vendors/apex_chart/apex_dashboard.js"></script>
+    <script src="vendors/echart/echarts.min.js"></script>
+    <script src="vendors/chart_am/core.js"></script>
+    <script src="vendors/chart_am/charts.js"></script>
+    <script src="vendors/chart_am/animated.js"></script>
+    <script src="vendors/chart_am/kelly.js"></script>
+    <script src="vendors/chart_am/chart-custom.js"></script>
+
+    <script src="js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/modified.js"></script>
+  </body>
+</html>
